@@ -1,0 +1,2 @@
+FreeBSD 14.0-CURRENT #9 main-n250021-4fc5bec7a5d: Thu Oct 14 14:39:35 CDT 2021
+    root@Amphioctopus_marginatus:/usr/obj/usr/src/amd64.amd64/sys/GENERIC
