@@ -1,0 +1,479 @@
+---<<BOOT>>---
+Copyright (c) 1992-2021 The FreeBSD Project.
+Copyright (c) 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994
+	The Regents of the University of California. All rights reserved.
+FreeBSD is a registered trademark of The FreeBSD Foundation.
+FreeBSD 14.0-CURRENT #9 main-n250021-4fc5bec7a5d: Thu Oct 14 14:39:35 CDT 2021
+    root@Amphioctopus_marginatus:/usr/obj/usr/src/amd64.amd64/sys/GENERIC amd64
+FreeBSD clang version 12.0.1 (git@github.com:llvm/llvm-project.git llvmorg-12.0.1-0-gfed41342a82f)
+WARNING: WITNESS option enabled, expect reduced performance.
+VT(efifb): resolution 1920x1080
+CPU: AMD Ryzen 7 5700U with Radeon Graphics          (1796.66-MHz K8-class CPU)
+  Origin="AuthenticAMD"  Id=0x860f81  Family=0x17  Model=0x68  Stepping=1
+  Features=0x178bfbff<FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CLFLUSH,MMX,FXSR,SSE,SSE2,HTT>
+  Features2=0x7ed8320b<SSE3,PCLMULQDQ,MON,SSSE3,FMA,CX16,SSE4.1,SSE4.2,MOVBE,POPCNT,AESNI,XSAVE,OSXSAVE,AVX,F16C,RDRAND>
+  AMD Features=0x2e500800<SYSCALL,NX,MMX+,FFXSR,Page1GB,RDTSCP,LM>
+  AMD Features2=0x75c237ff<LAHF,CMP,SVM,ExtAPIC,CR8,ABM,SSE4A,MAS,Prefetch,OSVW,IBS,SKINIT,WDT,TCE,Topology,PCXC,PNXC,DBE,PL2I,MWAITX,ADMSKX>
+  Structured Extended Features=0x219c91a9<FSGSBASE,BMI1,AVX2,SMEP,BMI2,PQM,PQE,RDSEED,ADX,SMAP,CLFLUSHOPT,CLWB,SHA>
+  Structured Extended Features2=0x400004<UMIP,RDPID>
+  XSAVE Features=0xf<XSAVEOPT,XSAVEC,XINUSE,XSAVES>
+  AMD Extended Feature Extensions ID EBX=0x90cf757<CLZERO,IRPerf,XSaveErPtr,RDPRU,MCOMMIT,WBNOINVD,IBPB,IBRS,STIBP,PREFER_IBRS,SSBD>
+  SVM: NP,NRIP,VClean,AFlush,DAssist,NAsids=32768
+  TSC: P-state invariant, performance statistics
+real memory  = 17179869184 (16384 MB)
+avail memory = 15930781696 (15192 MB)
+Event timer "LAPIC" quality 600
+ACPI APIC Table: <LENOVO CB-01   >
+FreeBSD/SMP: Multiprocessor System Detected: 16 CPUs
+FreeBSD/SMP: 1 package(s) x 2 cache groups x 4 core(s) x 2 hardware threads
+random: registering fast source Intel Secure Key RNG
+random: fast provider: "Intel Secure Key RNG"
+random: unblocking device.
+ioapic0 <Version 2.1> irqs 0-23
+ioapic1 <Version 2.1> irqs 24-55
+Launching APs: 8 11 9 10 14 15 13 2 3 1 6 12 7 5 4
+Timecounter "TSC" frequency 1796661180 Hz quality 1000
+random: entropy device external interface
+kbd1 at kbdmux0
+efirtc0: <EFI Realtime Clock>
+efirtc0: registered as a time-of-day clock, resolution 1.000000s
+smbios0: <System Management BIOS> at iomem 0xc93e2000-0xc93e201e
+smbios0: Version: 3.3, BCD Revision: 3.3
+aesni0: <AES-CBC,AES-CCM,AES-GCM,AES-ICM,AES-XTS,SHA1,SHA256>
+acpi0: <LENOVO CB-01>
+acpi0: Power Button (fixed)
+atrtc0: <AT realtime clock> port 0x70-0x71 on acpi0
+atrtc0: registered as a time-of-day clock, resolution 1.000000s
+Event timer "RTC" frequency 32768 Hz quality 0
+attimer0: <AT timer> port 0x40-0x43 on acpi0
+Timecounter "i8254" frequency 1193182 Hz quality 0
+Event timer "i8254" frequency 1193182 Hz quality 100
+hpet0: <High Precision Event Timer> iomem 0xfed00000-0xfed003ff irq 0,8 on acpi0
+Timecounter "HPET" frequency 14318180 Hz quality 950
+Event timer "HPET" frequency 14318180 Hz quality 350
+Event timer "HPET1" frequency 14318180 Hz quality 350
+Event timer "HPET2" frequency 14318180 Hz quality 350
+Timecounter "ACPI-fast" frequency 3579545 Hz quality 900
+acpi_timer0: <32-bit timer at 3.579545MHz> port 0x408-0x40b on acpi0
+acpi_ec0: <Embedded Controller: GPE 0x3> port 0x62,0x66 on acpi0
+isab0: <ACPI Generic ISA bridge> on acpi0
+isa0: <ISA bus> on isab0
+acpi_button0: <Power Button> on acpi0
+pcib0: <ACPI Host-PCI bridge> port 0xcf8-0xcff on acpi0
+pci0: <ACPI PCI bus> on pcib0
+pci0: <base peripheral, IOMMU> at device 0.2 (no driver attached)
+pcib1: <ACPI PCI-PCI bridge> at device 1.2 on pci0
+pci1: <ACPI PCI bus> on pcib1
+rtsx0: <2.0i Realtek RTS522A PCIe MMC/SD Card Reader> mem 0xfd700000-0xfd700fff at device 0.0 on pci1
+rtsx0: No card is detected
+pcib2: <ACPI PCI-PCI bridge> at device 2.2 on pci0
+pci2: <ACPI PCI bus> on pcib2
+pci2: <network> at device 0.0 (no driver attached)
+pcib3: <ACPI PCI-PCI bridge> at device 2.4 on pci0
+pci3: <ACPI PCI bus> on pcib3
+nvme0: <Generic NVMe Device> mem 0xfd500000-0xfd503fff at device 0.0 on pci3
+pcib4: <ACPI PCI-PCI bridge> at device 8.1 on pci0
+pci4: <ACPI PCI bus> on pcib4
+vgapci0: <VGA-compatible display> port 0x1000-0x10ff mem 0x460000000-0x46fffffff,0x470000000-0x4701fffff,0xfd400000-0xfd47ffff at device 0.0 on pci4
+hdac0: <ATI (0x1637) HDA Controller> mem 0xfd4c8000-0xfd4cbfff at device 0.1 on pci4
+pci4: <encrypt/decrypt> at device 0.2 (no driver attached)
+xhci0: <XHCI (generic) USB 3.0 controller> mem 0xfd000000-0xfd0fffff at device 0.3 on pci4
+xhci0: 64 bytes context size, 64-bit DMA
+usbus0 on xhci0
+usbus0: 5.0Gbps Super Speed USB v3.0
+xhci1: <XHCI (generic) USB 3.0 controller> mem 0xfd100000-0xfd1fffff at device 0.4 on pci4
+xhci1: 64 bytes context size, 64-bit DMA
+usbus1 on xhci1
+usbus1: 5.0Gbps Super Speed USB v3.0
+pci4: <multimedia> at device 0.5 (no driver attached)
+hdac1: <AMD Raven HDA Controller> mem 0xfd4c0000-0xfd4c7fff at device 0.6 on pci4
+isab1: <PCI-ISA bridge> at device 20.3 on pci0
+device_attach: isab1 attach returned 6
+acpi_lid0: <Control Method Lid Switch> on acpi0
+acpi_button1: <Sleep Button> on acpi0
+acpi_tz0: <Thermal Zone> on acpi0
+acpi_tz1: <Thermal Zone> on acpi0
+cpu0: <ACPI CPU> on acpi0
+atkbdc0: <Keyboard controller (i8042)> port 0x60,0x64 irq 1 on acpi0
+atkbd0: <AT Keyboard> irq 1 on atkbdc0
+kbd0 at atkbd0
+atkbd0: [GIANT-LOCKED]
+acpi_acad0: <AC Adapter> on acpi0
+battery0: <ACPI Control Method Battery> on acpi0
+hwpstate0: <Cool`n'Quiet 2.0> on cpu0
+Timecounters tick every 1.000 msec
+nvme0: Allocated 64MB host memory buffer
+ugen0.1: <0x1022 XHCI root HUB> at usbus0
+ugen1.1: <0x1022 XHCI root HUB> at usbus1
+uhub0 on usbus0
+uhub0: <0x1022 XHCI root HUB, class 9/0, rev 3.00/1.00, addr 1> on usbus0
+uhub1 on usbus1
+uhub1: <0x1022 XHCI root HUB, class 9/0, rev 3.00/1.00, addr 1> on usbus1
+nvd0: <Samsung SSD 980 1TB> NVMe namespace
+nvd0: 953869MB (1953525168 512 byte sectors)
+hdacc0: <ATI R6xx HDA CODEC> at cad 0 on hdac0
+hdaa0: <ATI R6xx Audio Function Group> at nid 1 on hdacc0
+pcm0: <ATI R6xx (HDMI)> at nid 3 on hdaa0
+hdacc1: <Realtek ALC257 HDA CODEC> at cad 0 on hdac1
+hdaa1: <Realtek ALC257 Audio Function Group> at nid 1 on hdacc1
+pcm1: <Realtek ALC257 (Internal Analog)> at nid 20 and 18 on hdaa1
+pcm2: <Realtek ALC257 (Right Analog)> at nid 33 and 25 on hdaa1
+isab1: <PCI-ISA bridge> at device 20.3 on pci0
+device_attach: isab1 attach returned 6
+Trying to mount root from ufs:/dev/nvd0p7 [rw]...
+WARNING: WITNESS option enabled, expect reduced performance.
+<118>Waiting 30s for the root mount holders: usbus0 usbus1
+uhub0: 6 ports with 6 removable, self powered
+uhub1: 6 ports with 6 removable, self powered
+ugen0.2: <Realtek 802.11ac WLAN Adapter> at usbus0
+rtwn0 on uhub0
+rtwn0: <802.11ac WLAN Adapter > on usbus0
+ugen1.2: <EgisTec EgisTec EH576> at usbus1
+rtwn0: MAC/BB RTL8821AU, RF 6052 1T1R
+<118>.
+ugen1.3: <Realtek Bluetooth Radio> at usbus1
+ugen0.3: <SunplusIT Inc Integrated Camera> at usbus0
+<118>Setting hostuuid: 13ce71ce-ba7e-11eb-9258-900f0c2fcd80.
+<118>Setting hostid: 0xca3338a4.
+<118>Starting file system checks:
+<118>/dev/nvd0p7: FILE SYSTEM CLEAN; SKIPPING CHECKS
+<118>/dev/nvd0p7: clean, 57939204 free (43588 frags, 7236952 blocks, 0.1% fragmentation)
+<118>/dev/nvd0p1: Invalid signature in fsinfo block
+<118>/dev/nvd0p1: FILESYSTEM CLEAN; SKIPPING CHECKS
+<118>Mounting local filesystems:.
+<118>Loading kernel modules:
+<6>[drm] amdgpu kernel modesetting enabled.
+drmn0: <drmn> on vgapci0
+VT: Replacing driver "efifb" with new "dummy".
+vgapci0: child drmn0 requested pci_enable_io
+vgapci0: child drmn0 requested pci_enable_io
+sysctl_warn_reuse: can't re-use a leaf (hw.dri.debug)!
+<6>[drm] initializing kernel modesetting (RENOIR 0x1002:0x164C 0x17AA:0x3F96 0xC1).
+<6>[drm] register mmio base: 0xFD400000
+<6>[drm] register mmio size: 524288
+<6>[drm] add ip block number 0 <soc15_common>
+<6>[drm] add ip block number 1 <gmc_v9_0>
+<6>[drm] add ip block number 2 <vega10_ih>
+<6>[drm] add ip block number 3 <psp>
+<6>[drm] add ip block number 4 <smu>
+<6>[drm] add ip block number 5 <gfx_v9_0>
+<6>[drm] add ip block number 6 <sdma_v4_0>
+<6>[drm] add ip block number 7 <dm>
+<6>[drm] add ip block number 8 <vcn_v2_0>
+<6>[drm] add ip block number 9 <jpeg_v2_0>
+drmn0: successfully loaded firmware image 'amdgpu/renoir_gpu_info.bin'
+<6>ATOM BIOS: 113-LUCIENNE-015
+drmn0: successfully loaded firmware image 'amdgpu/renoir_sdma.bin'
+<6>[drm] VCN decode is enabled in VM mode
+<6>[drm] VCN encode is enabled in VM mode
+<6>[drm] JPEG decode is enabled in VM mode
+<6>[drm] vm size is 262144 GB, 4 levels, block size is 9-bit, fragment size is 9-bit
+drmn0: VRAM: 512M 0x000000F400000000 - 0x000000F41FFFFFFF (512M used)
+drmn0: GART: 1024M 0x0000000000000000 - 0x000000003FFFFFFF
+drmn0: AGP: 267419648M 0x000000F800000000 - 0x0000FFFFFFFFFFFF
+<4>Successfully added WC MTRR for [0x460000000-0x46fffffff]: 0; 
+<6>[drm] Detected VRAM RAM=512M, BAR=256M
+<6>[drm] RAM width 64bits UNKNOWN
+<6>[TTM] Zone  kernel: Available graphics memory: 8036952 KiB
+<6>[TTM] Zone   dma32: Available graphics memory: 2097152 KiB
+<6>[TTM] Initializing pool allocator
+<6>[drm] amdgpu: 512M of VRAM memory ready
+<6>[drm] amdgpu: 3072M of GTT memory ready.
+<6>[drm] GART: num cpu pages 262144, num gpu pages 262144
+<6>[drm] PCIE GART of 1024M enabled (table at 0x000000F400900000).
+drmn0: successfully loaded firmware image 'amdgpu/renoir_asd.bin'
+drmn0: successfully loaded firmware image 'amdgpu/renoir_pfp.bin'
+drmn0: successfully loaded firmware image 'amdgpu/renoir_me.bin'
+drmn0: successfully loaded firmware image 'amdgpu/renoir_ce.bin'
+drmn0: successfully loaded firmware image 'amdgpu/renoir_rlc.bin'
+drmn0: successfully loaded firmware image 'amdgpu/renoir_mec.bin'
+drmn0: successfully loaded firmware image 'amdgpu/renoir_mec2.bin'
+<6>[drm] use_doorbell being set to: [true]
+drmn0: successfully loaded firmware image 'amdgpu/renoir_dmcub.bin'
+<6>[drm] Loading DMUB firmware via PSP: version=0x01020003
+drmn0: successfully loaded firmware image 'amdgpu/renoir_vcn.bin'
+<6>[drm] Found VCN firmware Version ENC: 1.7 DEC: 4 VEP: 0 Revision: 17
+<6>[drm] PSP loading VCN firmware
+sos fw version = 0x110165.
+<6>[drm] reserve 0x400000 from 0xf41f800000 for PSP TMR
+<6>amdgpu: [powerplay] smu driver if version = 0x0000000b, smu fw if version = 0x0000000e, smu fw version = 0x00375000 (55.80.0)
+<4>amdgpu: [powerplay] SMU driver if version not matched
+<6>amdgpu: [powerplay] dpm has been disabled
+<6>amdgpu: [powerplay] SMU is initialized successfully!
+<6>[drm] kiq ring mec 2 pipe 1 q 0
+<6>[drm] Display Core initialized with v3.2.69!
+<6>[drm] DMUB hardware initialized: version=0x01020003
+<6>[drm] Connector eDP-1: get mode from tunables:
+<6>[drm]   - kern.vt.fb.modes.eDP-1
+<6>[drm]   - kern.vt.fb.default_mode
+<6>[drm] Connector HDMI-A-1: get mode from tunables:
+<6>[drm]   - kern.vt.fb.modes.HDMI-A-1
+<6>[drm]   - kern.vt.fb.default_mode
+<6>[drm] Supports vblank timestamp caching Rev 2 (21.10.2013).
+<6>[drm] Driver supports precise vblank timestamp query.
+<6>[drm] VCN decode and encode initialized successfully(under DPG Mode).
+<6>[drm] JPEG decode initialized successfully.
+<6>[drm] fb mappable at 0x460C8E000
+<6>[drm] vram apper at 0x460000000
+<6>[drm] size 8294400
+<6>[drm] fb depth is 24
+<6>[drm]    pitch is 7680
+WARNING: Device "fb" is Giant locked and may be deleted before FreeBSD 14.0.
+VT: Replacing driver "dummy" with new "fb".
+taskqueue_drain with the following non-sleepable locks held:
+exclusive sleep mutex vtdev (vtdev) r = 0 (0xffffffff81aea368) locked @ /usr/src/sys/dev/vt/vt_core.c:3011
+stack backtrace:
+#0 0xffffffff80c9a721 at witnes---dcn21_validate_bandwidth
+s_debugger+0x71
+#1 0xffffffff80c9b83a at witness_warn+0x3fa
+#2 0xffffffff80c8d193 at taskqueue_drain+0x33
+#3 0xffffffff82f43983 at vt_kms_postswitch+0x73
+#4 0xffffffff80a74c5d at vt_fb_i#0 0xffffffff80e91ec3 at linux_dump_stack+0x23
+nit+0xfd
+#5 0xffffffff80a7c2c8 #1 0xffffffff831d226c at dcn21_validate_bandwidth+0x2c
+at vt_replace_backend+0x118
+#6 0xffffffff80a74d63 at vt_fb_att#2 0xffffffff8314d04c at dc_validate_global_state+0x2cc
+ach+0x13
+#7 0xffffffff82f44585 at linux_register_framebuffer+0#3 0xffffffff83121d46 at amdgpu_dm_atomic_check+0x11f6
+x535
+#8 0xffffffff82f4a0a5 at __drm_fb_helper_initial_config_a#4 0xffffffff82efa384 at drm_atomic_check_only+0x424
+nd_unlock+0x445
+#9 0xffffffff8301b016 at amdgpu_fbdev_init+0xe#5 0xffffffff82efa793 at drm_atomic_commit+0x13
+6
+#10 0xffffffff83012170 at amd#6 0xffffffff82f078d8 at drm_client_modeset_commit_atomic+0x148
+gpu_device_init+0x20a0
+#11 0xffffffff8302697b at amdgpu_driver#7 0xffffffff82f07636 at drm_client_modeset_commit_force+0x66
+_load_kms+0x4b
+#12 0xffffffff82f1a756 at drm_dev_register+0xc6#8 0xffffffff82f47e0a at drm_fb_helper_restore_fbdev_mode_unlocked+0x7a
+
+#13 0xffffffff8301a2e1 at amdg#9 0xffffffff80c8cbaa at taskqueue_run_locked+0xaa
+pu_pci_probe+0x1d1
+#14 0xffffffff80e9745e at linux_pci_attach_#10 0xffffffff80c8dc32 at taskqueue_thread_loop+0xc2
+device+0x42e
+#15 0xffffffff80c6#11 0xffffffff80be1a40 at fork_exit+0x80
+57b1 at device_attach+0x3c1
+#16 0xffffffff80c65360 at device_p#12 0xffffffff810c283e at fork_trampoline+0xe
++fpu dcn21_validate_bandwidth (/usr/home/ken/git/drm-kmod/drivers/gpu/drm/amd/display/dc/dcn21/dcn21_resource.c:1198)
+-fpu dcn21_validate_bandwidth_fp (/usr/home/ken/git/drm-kmod/drivers/gpu/drm/amd/display/dc/dcn21/dcn21_resource.c:1138)
++fpu dcn21_validate_bandwidth_fp (/usr/home/ken/git/drm-kmod/drivers/gpu/drm/amd/display/dc/dcn21/dcn21_resource.c:1141)
+robe_and_attach+0x70
+#17 0xffffffff80c67247 at bus_generic_driver_added+0x67
+Sleeping on "tq_drain" with the following non-sleepable locks held:
+exclusive sleep mutex vtdev (vtdev) r = 0 (0xffffffff81aea368) locked @ /usr/src/sys/dev/vt/vt_core.c:3011
+stack backtrace:
+-fpu dcn21_validate_bandwidth_fp (/usr/home/ken/git/drm-kmod/drivers/gpu/drm/amd/display/dc/dcn21/dcn21_resource.c:1178)
+-fpu dcn21_validate_bandwidth (/usr/home/ken/git/drm-kmod/drivers/gpu/drm/amd/display/dc/dcn21/dcn21_resource.c:1200)
+#0 0xffffffff80c9a721 at witness_debugger+0x71
+#1 0xffffffff80c9b83a at witness_warn+0x3fa
+#2 0xffffffff80c35925 at _sleep+0x55
+#3 0xffffffff80c8d25b at taskqueue_drain+0xfb
+#4 0xffffffff82f43983 at vt_kms_postswitch+0x73
+#5 0xffffffff80a74c5d at vt_fb_init+0xfd
+#6 0xffffffff80a7c2c8 at vt_replace_backend+0x118
+#7 0xffffffff80a74d63 at vt_fb_attach+0x13
+#8 0xffffffff82f44585 at linux_register_framebuffer+0x535
+#9 0xffffffff82f4a0a5 at __drm_fb_helper_initial_config_and_unlock+0x445
+#10 0xffffffff8301b016 at amdgpu_fbdev_init+0xe6
+#11 0xffffffff83012170 at amdgpu_device_init+0x20a0
+#12 0xffffffff8302697b at amdgpu_driver_load_kms+0x4b
+#13 0xffffffff82f1a756 at drm_dev_register+0xc6
+#14 0xffffffff8301a2e1 at amdgpu_pci_probe+0x1d1
+#15 0xffffffff80e9745e at linux_pci_attach_device+0x42e
+#16 0xffffffff80c657b1 at device_attach+0x3c1
+#17 0xffffffff80c65360 at device_probe_and_attach+0x70
+lock order reversal: (Giant after non-sleepable)
+ 1st 0xffffffff81aea368 vtdev (vtdev, sleep mutex) @ /usr/src/sys/dev/vt/vt_core.c:3011
+ 2nd 0xffffffff81a029c0 Giant (Giant, sleep mutex) @ /usr/src/sys/kern/kern_synch.c:232
+lock order Giant -> vtdev established at:
+#0 0xffffffff80c99b39 at witness_checkorder+0x459
+#1 0xffffffff80c05164 at __mtx_lock_flags+0x94
+#2 0xffffffff80a7b8b9 at vt_upgrade+0x369
+#3 0xffffffff80bb3560 at mi_startup+0x1f0
+#4 0xffffffff80386022 at btext+0x22
+lock order vtdev -> Giant attempted at:
+#0 0xffffffff80c9a46f at witness_checkorder+0xd8f
+#1 0xffffffff80c05164 at __mtx_lock_flags+0x94
+#2 0xffffffff80c35c04 at _sleep+0x334
+#3 0xffffffff80c8d25b at taskqueue_drain+0xfb
+#4 0xffffffff82f43983 at vt_kms_postswitch+0x73
+#5 0xffffffff80a74c5d at vt_fb_init+0xfd
+#6 0xffffffff80a7c2c8 at vt_replace_backend+0x118
+#7 0xffffffff80a74d63 at vt_fb_attach+0x13
+#8 0xffffffff82f44585 at linux_register_framebuffer+0x535
+#9 0xffffffff82f4a0a5 at __drm_fb_helper_initial_config_and_unlock+0x445
+#10 0xffffffff8301b016 at amdgpu_fbdev_init+0xe6
+#11 0xffffffff83012170 at amdgpu_device_init+0x20a0
+#12 0xffffffff8302697b at amdgpu_driver_load_kms+0x4b
+#13 0xffffffff82f1a756 at drm_dev_register+0xc6
+#14 0xffffffff8301a2e1 at amdgpu_pci_probe+0x1d1
+#15 0xffffffff80e9745e at linux_pci_attach_device+0x42e
+#16 0xffffffff80c657b1 at device_attach+0x3c1
+#17 0xffffffff80c65360 at device_probe_and_attach+0x70
+start FB_INFO:
+type=11 height=1080 width=1920 depth=32
+cmsize=16 size=8294400
+pbase=0x460c8e000 vbase=0xfffffe011228e000
+name=drmn0 flags=0x0 stride=7680 bpp=32
+cmap[0]=0 cmap[1]=7f0000 cmap[2]=7f00 cmap[3]=c4a000
+end FB_INFO
+drmn0: fb0: amdgpudrmfb frame buffer device
+drmn0: ring gfx uses VM inv eng 0 on hub 0
+drmn0: ring comp_1.0.0 uses VM inv eng 1 on hub 0
+drmn0: ring comp_1.1.0 uses VM inv eng 4 on hub 0
+drmn0: ring comp_1.2.0 uses VM inv eng 5 on hub 0
+drmn0: ring comp_1.3.0 uses VM inv eng 6 on hub 0
+drmn0: ring comp_1.0.1 uses VM inv eng 7 on hub 0
+drmn0: ring comp_1.1.1 uses VM inv eng 8 on hub 0
+drmn0: ring comp_1.2.1 uses VM inv eng 9 on hub 0
+drmn0: ring comp_1.3.1 uses VM inv eng 10 on hub 0
+drmn0: ring kiq_2.1.0 uses VM inv eng 11 on hub 0
+drmn0: ring sdma0 uses VM inv eng 0 on hub 1
+drmn0: ring vcn_dec uses VM inv eng 1 on hub 1
+drmn0: ring vcn_enc0 uses VM inv eng 4 on hub 1
+drmn0: ring vcn_enc1 uses VM inv eng 5 on hub 1
+drmn0: ring jpeg_dec uses VM inv eng 6 on hub 1
+<6>[drm] Initialized amdgpu 3.36.0 20150101 for drmn0 on minor 0
+<118>Autoloading module: acpi_wmi
+<118>Autoloading module: intpm
+acpi_wmi0: <ACPI-WMI mapping> on acpi0
+acpi_wmi0: Embedded MOF found
+ACPI: \AOD.WQBA: 1 arguments were passed to a non-method ACPI object (Buffer) (20210930/nsarguments-361)
+driver bug: Unable to set devclass (class: ppc devname: (unknown))
+acpi_wmi1: <ACPI-WMI mapping> on acpi0
+acpi_wmi1: Embedded MOF found
+ACPI: \_SB.WMIU.WQDA: 1 arguments were passed to a non-method ACPI object (Buffer) (20210930/nsarguments-361)
+acpi_wmi2: <ACPI-WMI mapping> on acpi0
+acpi_wmi2: Embedded MOF found
+ACPI: \_SB.AMW0.WQDD: 1 arguments were passed to a non-method ACPI object (Buffer) (20210930/nsarguments-361)
+acpi_wmi3: <ACPI-WMI mapping> on acpi0
+acpi_wmi3: Embedded MOF found
+ACPI: \_SB.AMW1.WQDD: 1 arguments were passed to a non-method ACPI object (Buffer) (20210930/nsarguments-361)
+intsmb0: <AMD FCH SMBus Controller> at device 20.0 on pci0
+smbus0: <System Management Bus> on intsmb0
+isab1: <PCI-ISA bridge> at device 20.3 on pci0
+device_attach: isab1 attach returned 6
+<118>Setting hostname: Amphioctopus_marginatus.
+<118>/etc/rc: WARNING: $ipv6_enable is obsolete.  Use $ipv6_activate_all_interfaces instead.
+<118>Setting up harvesting: PURE_RDRAND,[UMA],[FS_ATIME],SWI,INTERRUPT,NET_NG,[NET_ETHER],NET_TUN,MOUSE,KEYBOARD,ATTACH,CACHED
+<118>Feeding entropy: .
+<118>ELF ldconfig path: /lib /usr/lib /usr/lib/compat /usr/local/lib /usr/local/lib/compat/pkg /usr/local/lib/compat/pkg /usr/local/lib/gcc10 /usr/local/lib/mysql /usr/local/lib/perl5/5.32/mach/CORE /usr/local/llvm12/lib /usr/local/mpi/openmpi/lib
+<118>32-bit compatibility ldconfig path: /usr/lib32
+<118>/etc/rc: WARNING: $ipv6_enable is obsolete.  Use $ipv6_activate_all_interfaces instead.
+<118>/etc/rc: WARNING: $ipv6_enable is obsolete.  Use $ipv6_activate_all_interfaces instead.
+<6>wlan0: Ethernet address: 98:48:27:c0:a7:bb
+<118>Created wlan(4) interfaces: wlan0.
+<6>lo0: link state changed to UP
+<118>Starting wpa_supplicant.
+<118>Starting dhclient.
+<118>wlan0: no link ......
+<6>wlan0: link state changed to UP
+<118> got link
+<118>DHCPREQUEST on wlan0 to 255.255.255.255 port 67
+<118>DHCPACK from 192.168.1.1
+<118>Bogus Host Name option 12: Amphioctopus_marginatus (Amphioctopus_marginatus)
+<118>bound to 192.168.1.138 -- renewal in 21600 seconds.
+<118>Starting Network: lo0 wlan0.
+<118>lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> metric 0 mtu 16384
+<118>	options=680003<RXCSUM,TXCSUM,LINKSTATE,RXCSUM_IPV6,TXCSUM_IPV6>
+<118>	inet6 ::1 prefixlen 128
+<118>	inet6 fe80::1%lo0 prefixlen 64 scopeid 0x1
+<118>	inet 127.0.0.1 netmask 0xff000000
+<118>	groups: lo
+<118>	nd6 options=23<PERFORMNUD,ACCEPT_RTADV,AUTO_LINKLOCAL>
+<118>wlan0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
+<118>	options=200001<RXCSUM,RXCSUM_IPV6>
+<118>	ether 98:48:27:c0:a7:bb
+<118>	inet6 fe80::9a48:27ff:fec0:a7bb%wlan0 prefixlen 64 scopeid 0x2
+<118>	inet 192.168.1.138 netmask 0xffffff00 broadcast 192.168.1.255
+<118>	groups: wlan
+<118>	ssid SpectrumSetup-DE channel 44 (5220 MHz 11a ht/20) bssid a4:97:33:11:df:dd
+<118>	regdomain FCC country US authmode WPA2/802.11i privacy ON
+<118>	deftxkey UNDEF AES-CCM 3:128-bit txpower 17 bmiss 7 mcastrate 6
+<118>	mgmtrate 6 scanvalid 60 ht20 ampdulimit 64k shortgi -stbc
+<118>	ldpctx -ldpcrx -uapsd wme roaming MANUAL
+<118>	parent interface: rtwn0
+<118>	media: IEEE 802.11 Wireless Ethernet MCS mode 11na
+<118>	status: associated
+<118>	nd6 options=23<PERFORMNUD,ACCEPT_RTADV,AUTO_LINKLOCAL>
+<118>Starting devd.
+<118>Cannot 'start' webcamd. Set webcamd_enable to YES in /etc/rc.conf or use 'onestart' instead of 'start'.
+<118>Cannot 'start' webcamd. Set webcamd_enable to YES in /etc/rc.conf or use 'onestart' instead of 'start'.
+<118>Autoloading module: ng_ubt
+ubt0 on uhub1
+ubt0: <Bluetooth Radio> on usbus1
+<118>Cannot 'start' webcamd. Set webcamd_enable to YES in /etc/rc.conf or use 'onestart' instead of 'start'.
+<118>Cannot 'start' webcamd. Set webcamd_enable to YES in /etc/rc.conf or use 'onestart' instead of 'start'.
+<118>add host 127.0.0.1: gateway lo0 fib 0: route already in table
+<118>add host ::1: gateway lo0 fib 0: route already in table
+<118>add net fe80::: gateway ::1
+<118>add net ff02::: gateway ::1
+<118>add net ::ffff:0.0.0.0: gateway ::1
+<118>add net ::0.0.0.0: gateway ::1
+<118>Starting local_unbound.
+<118>Waiting for nameserver to start... good
+<118>Creating and/or trimming log files.
+<118>Updating motd:.
+<118>Clearing /tmp (X related).
+<118>Updating /var/run/os-release done.
+<118>Starting syslogd.
+<118>Oct 14 23:56:58 Amphioctopus_marginatus kernel: Successfully added WC MTRR for [0x460000000-0x46fffffff]: 0; 
+<118>Oct 14 23:56:58 Amphioctopus_marginatus kernel: amdgpu: [powerplay] SMU driver if version not matched
+<118>No core dumps found.
+<118>Starting dbus.
+<118>Starting powerd.
+<118>Performing sanity check on openntpd configuration:
+<118>configuration OK
+<118>Starting openntpd.
+<118>Mounting late filesystems:.
+<118>Performing sanity check on sshd configuration.
+<118>Starting sshd.
+<118>Configuring vt: blanktime.
+<118>Starting cron.
+<118>Starting background file system checks in 60 seconds.
+<118>
+<118>Thu Oct 14 23:56:59 UTC 2021
+---dcn21_validate_bandwidth
+#0 0xffffffff80e91ec3 at linux_dump_stack+0x23
+#1 0xffffffff831d226c at dcn21_validate_bandwidth+0x2c
+#2 0xffffffff8314d04c at dc_validate_global_state+0x2cc
+#3 0xffffffff83121d46 at amdgpu_dm_atomic_check+0x11f6
+#4 0xffffffff82efa384 at drm_atomic_check_only+0x424
+#5 0xffffffff82efa793 at drm_atomic_commit+0x13
+#6 0xffffffff82f078d8 at drm_client_modeset_commit_atomic+0x148
+#7 0xffffffff82f07636 at drm_client_modeset_commit_force+0x66
+#8 0xffffffff82f47e0a at drm_fb_helper_restore_fbdev_mode_unlocked+0x7a
+#9 0xffffffff80c8cbaa at taskqueue_run_locked+0xaa
+#10 0xffffffff80c8dc32 at taskqueue_thread_loop+0xc2
+#11 0xffffffff80be1a40 at fork_exit+0x80
+#12 0xffffffff810c283e at fork_trampoline+0xe
++fpu dcn21_validate_bandwidth (/usr/home/ken/git/drm-kmod/drivers/gpu/drm/amd/display/dc/dcn21/dcn21_resource.c:1198)
+-fpu dcn21_validate_bandwidth_fp (/usr/home/ken/git/drm-kmod/drivers/gpu/drm/amd/display/dc/dcn21/dcn21_resource.c:1138)
++fpu dcn21_validate_bandwidth_fp (/usr/home/ken/git/drm-kmod/drivers/gpu/drm/amd/display/dc/dcn21/dcn21_resource.c:1141)
+panic: Unregistered use of FPU in kernel
+cpuid = 2
+time = 1634255841
+KDB: stack backtrace:
+db_trace_self_wrapper() at db_trace_self_wrapper+0x2b/frame 0xfffffe001ab626f0
+vpanic() at vpanic+0x187/frame 0xfffffe001ab62750
+panic() at panic+0x43/frame 0xfffffe001ab627b0
+trap() at trap+0x2ce/frame 0xfffffe001ab628c0
+calltrap() at calltrap+0x8/frame 0xfffffe001ab628c0
+--- trap 0x16, rip = 0xffffffff831b4d1e, rsp = 0xfffffe001ab62990, rbp = 0xfffffe001ab629d8 ---
+dcn20_populate_dml_pipes_from_context() at dcn20_populate_dml_pipes_from_context+0x11e/frame 0xfffffe001ab629d8
+dcn21_populate_dml_pipes_from_context() at dcn21_populate_dml_pipes_from_context+0x17/frame 0xfffffe001ab62a00
+dcn20_fast_validate_bw() at dcn20_fast_validate_bw+0x62/frame 0xfffffe001ab62a80
+dcn21_validate_bandwidth_fp() at dcn21_validate_bandwidth_fp+0xf6/frame 0xfffffe001ab62b08
+dcn21_validate_bandwidth() at dcn21_validate_bandwidth+0x60/frame 0xfffffe001ab62b30
+dc_validate_global_state() at dc_validate_global_state+0x2cc/frame 0xfffffe001ab62b90
+amdgpu_dm_atomic_check() at amdgpu_dm_atomic_check+0x11f6/frame 0xfffffe001ab62cc0
+drm_atomic_check_only() at drm_atomic_check_only+0x424/frame 0xfffffe001ab62d40
+drm_atomic_commit() at drm_atomic_commit+0x13/frame 0xfffffe001ab62d60
+drm_client_modeset_commit_atomic() at drm_client_modeset_commit_atomic+0x148/frame 0xfffffe001ab62dd0
+drm_client_modeset_commit_force() at drm_client_modeset_commit_force+0x66/frame 0xfffffe001ab62e10
+drm_fb_helper_restore_fbdev_mode_unlocked() at drm_fb_helper_restore_fbdev_mode_unlocked+0x7a/frame 0xfffffe001ab62e40
+taskqueue_run_locked() at taskqueue_run_locked+0xaa/frame 0xfffffe001ab62ec0
+taskqueue_thread_loop() at taskqueue_thread_loop+0xc2/frame 0xfffffe001ab62ef0
+fork_exit() at fork_exit+0x80/frame 0xfffffe001ab62f30
+fork_trampoline() at fork_trampoline+0xe/frame 0xfffffe001ab62f30
+--- trap 0x18, rip = 0xa80, rsp = 0x10, rbp = 0x400007032 ---
+KDB: enter: panic
